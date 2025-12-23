@@ -1,0 +1,224 @@
+\chapter{Introduction}
+
+
+\section{What is an Ordinary Differential Equation?}
+Let's begin with an example. Consider the function $ y= f(x) = x^2$  on the interval $(-1, 1).$ We know that $f$ is differentiable on $(-1, 1)$ with its first order derivative 
+\begin{equation}\label{chap1:1}
+	\frac{dy}{dx} =2x.
+\end{equation}
+If we treat (\ref{chap1:1}) as an equation with \( y \) as the unknown, then we see that the function \( y = x^2 \) satisfies the equation, and therefore  \( y = x^2 \) is considered a solution of (\ref{chap1:1}) on the interval \( (-1, 1) \).
+The equation (\ref{chap1:1}) serves as an example of an \textbf{\textit{ordinary differential equation}} which involves a function of one independent variable and  ordinary derivatives of the function. 
+
+
+
+ 
+ A classical example of an ordinary differential equation is Newton’s law of gravity, which states that \textit{an object  in a free fall from a point near the Earth's surface experiences a constant acceleration, assuming air resistance is negligible}. This motion is described mathematically by the differential equation  
+\begin{equation}\label{chap1:3}
+	\frac{d^2x}{dt^2} = g,
+\end{equation}
+where \( g \) represents the gravitational acceleration near the Earth's surface, and \( x = x(t) \) denotes the object's height above the ground as a function of time $t$. Equivalently, the object  of mass $m$ experiences a constant weight while near Earth’s surface described by 
+\begin{equation}\label{chap1:4}
+	m\frac{d^2x}{dt^2} = mg.
+\end{equation}
+  In order to make this motion a little bit more realistic, suppose that air exerts  a resisting force  proportional to the velocity of the object.  With this assumption,  the differential equation (\ref{chap1:4}) of  motion becomes
+
+\begin{equation*}
+	m\frac{d^2x}{dt^2} = mg- \beta\,	\frac{dx}{dt},
+\end{equation*}
+where $\beta>0$ denotes the constant of proportionality of the air resistance to the velocity.
+Rearranging the terms and setting $b=\beta/m,$ we have
+\begin{equation*}
+	\frac{d^2x}{dt^2}+ b\,	\frac{dx}{dt}= g, 
+\end{equation*}
+  that is, 
+  \begin{equation}\label{chap1:5}
+  	x''(t)+ b \, x'(t)= g.
+  \end{equation}
+  Let $v(t)$ denote $x'(t),$ the velocity of the object.  Then (\ref{chap1:5}) can also
+   be expressed as  the following system of differential equations:
+   \begin{equation}\label{chap1:6}
+  \begin{cases}
+  	x'(t) =v(t),\\
+  	v'(t)+ b\, v(t)= g.
+  	\end{cases} 	
+  \end{equation}
+  We will study more systems of ordinary differential equations in Chapter~\ref{Systems}.
+
+
+\subsection{Definitions and Vocabulary}
+Suppose we are given the differential equation (\ref{chap1:1}) and asked to find all functions   $y$ with derivative equal to $2x$. To answer this, we  use the \textbf{\textit{fundamental theorem of calculus}} on the interval $[0, t]$ with $t\in (-1, 1)$ and integrate both sides of (\ref{chap1:1})  to obtain
+\[f(t) =\int_0^t	\frac{dy}{dx} \, dx = \int_0^t 2x\, dx = t^2 + C,\] 
+where  $C$ denotes an arbitrary  real constant. Renaming $t$ as $x,$  we find that $f(x) = x^2 +C,$   and we see that for each value of $C$ the function $y = x^2+C$ has  derivative equal to $2x$ for all $x$ in $(-1, 1).$   The collection of functions given by 
+\begin{equation}\label{chap1:7}
+	y = x^2+C,
+\end{equation}
+one function for each value of $C$, comprises all solutions of the equation (\ref{chap1:1}). The collection (\ref{chap1:7}) is called the \textbf{\textit{general solution}} of (\ref{chap1:1}) and each member of (\ref{chap1:7}) corresponding to a specific value of $C$ is called a \textbf{\textit{particular solution}} of (\ref{chap1:1}). The concepts of particular and general solutions apply to all differential equations discussed in this book and will be used consistently without further explanation.
+
+
+
+$\bullet$ DEs, solutions, domain of solutions, goal future predictions or long-term behavior of dependent variables, why intervals are so important for solutions?\\
+$\bullet$ Emphasis on the rate of change of a quantity both mathematically and geometrically. 
+\subsection{Geometry of First Order Differential Equations}
+\subsubsection{Slope field;  sketch of solutions}
+\subsection{Numerical Approximation of Solutions: Euler's Method}
+
+\subsection{Mathematical Models as Linear Differential Equations}
+Evolution of a quantity ...
+\subsubsection{Population Growth}
+\subsubsection{Mixing  Solutions}
+\subsubsection{Electric Circuits}
+\subsection{Mathematical Models as Nonlinear Differential Equations}
+\subsubsection{Logistic Population Growth}
+\subsubsection{Modeling the Spread of an Infectious Disease}
+\subsection{Scientific Principles Leading to Differential Equations}
+\subsubsection{Newton's law of motion, Newton's law of cooling/warming, Spring/Mass System with Linear/nonlinear Damping}
+
+\subsection{Integration Methods}
+\subsubsection{The $u-$subsitution Method}
+
+\subsubsection{Integration by parts}
+Given two differentiable functions $u$ and $v$ on an interval $I= [a, b],$ we have 
+\[\frac{d}{dx}(u(x) v(x))= u(x)\frac{d}{dx}v(x) + v(x)\frac{d}{dx}u(x).\]
+Then 
+\begin{equation}\label{IBP1}
+	\int_a^b \frac{d}{dx}(u(x) v(x))\, dx = \int_a^b  u(x)\frac{d}{dx}(v(x))\, dx + \int_a^bv(x)\frac{d}{dx}(u(x))\, dx.
+\end{equation}
+
+By using the fundamental theorem of calculus that states: given a differentiable $g:[a, b]\to\mathbb R$ with $g'$ continuous on $[a, b],$ we have 
+\[\int_a^b g'(x) dx = g(b)- g(a) = [g(x)]_a^b.\] We  recall that $[g(x)]_a^b$ is also denoted by $g(x)|_a^b.$ With these notations  used in (\ref{IBP1}), we have
+\begin{equation}\label{IBP2}
+	[u(x) v(x)]_a^b = \int_a^b  u(x)\frac{d}{dx}(v(x))\, dx + \int_a^bv(x)\frac{d}{dx}(u(x))\, dx.
+\end{equation}
+Using the Leibniz notations, the formula (\ref{IBP2}) can be written as 
+\begin{equation}\label{IBP3}
+	\boxed{
+	\int_a^b  u(x)v'(x)\, dx=[u(x) v(x)]_a^b- \int_a^b u'(x) v(x)\, dx.}
+\end{equation}
+The integration by part formula (\ref{IBP3}) can be written for antiderivatives as 
+\begin{equation}\label{IBP4}
+	\boxed{
+		\int u(x)v'(x)\, dx=u(x) v(x)- \int u'(x) v(x)\, dx.}
+\end{equation}
+
+
+
+To compute integral \[\int x^2 e^{2x}\, dx,\] we will need to use the integration parts repeatedly. We set
+ \( u = x^2 \), which we differentiate and obtain $du = 2x\, dx$, and  we set
+\( dv = e^{2x}\, dx \) which we integrate and obtain $v = \frac{e^{2x}}{2}.$
+Applying integration by parts formula (\ref{IBP4}), we have 
+
+\[
+\int x^2 e^{2x}\, dx =\displaystyle x^2\,  \frac{e^{2x}}{2} - \int 2x \frac{e^{2x}}{2} dx+A,
+\]
+where $A$ is the constant of integration.
+Using integration by parts again on \( \displaystyle\int 2x\, \frac{e^{2x}}{2} dx \), we  have
+
+\[
+\int 2x\, \frac{e^{2x}}{2} dx  = 2x \frac{e^{2x}}{4} - \int 2\, \frac{e^{2x}}{4} dx
+\]
+
+\[
+=  \frac{2xe^{2x}}{4} - \frac{2e^{2x}}{8}+B,
+\]
+where $B$ is a constant of integration.
+Substituting this back:
+\[
+\begin{array}{lc}
+	\displaystyle 
+\int x^2 e^{2x}\, dx  &= \displaystyle \frac{x^2 e^{2x}}{2} - \left( \frac{2x e^{2x}}{4} - \frac{2e^{2x}}{8} +B\right)+A\\
+&= \displaystyle x^2 \,\frac{e^{2x}}{2} - 2x\,\frac{e^{2x}}{4} + 2\, \frac{e^{2x}}{8}+C,
+\end{array}
+\]
+where $C= A-B$ is an arbitrary constant.
+ This procedure can be  organized in a table and is known as the \textbf{\textit{tabular method }}(also referred to as the \textbf{\textit{Kronecker method}}).
+ More precisely,
+the formula in \eqref{IBP4} can be written in the tabular form as follows: 
+
+
+\[
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{c @{\hspace*{2.0cm}} c}\toprule
+	\text{Derivative } &  \text{Integral} \\\cmidrule{1-2}
+	u(x)\tikzmark{Left 1} & \tikzmark{Right 1}v'(x) \\ \\
+	u'(x) \tikzmark{Left 2} & \tikzmark{Right 2}v(x) \\      
+	%	u''(x)  \tikzmark{Left 3} & \tikzmark{Right 3}\int v(x)\, dx  \\\bottomrule
+\end{array}
+\]
+%-----------------------------------------
+\DrawArrow[draw=red]{Left 1}{Right 2}{$+$}%
+\DrawArrow[draw=brown]{Left 2}{Right 2}{$-$}%
+%\DrawArrow[draw=blue]{Left 3}{Right 3}{$+$}%
+We observe that along the horizontal arrow we still have the integral of the signed product.
+For one more iteration  of the integration by parts, the tabular form is as follows:
+\[
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{c @{\hspace*{2.0cm}} c}\toprule
+	\text{Derivative} &  \text{Integral} \\\cmidrule{1-2}
+	u(x)\tikzmark{Left 1} & \tikzmark{Right 1}v'(x) \\
+	u'(x) \tikzmark{Left 2} & \tikzmark{Right 2}v(x) \\      \\
+	u''(x)  \tikzmark{Left 3} & \tikzmark{Right 3}\int v(x)\, dx  \\\bottomrule
+\end{array}
+\]
+%-----------------------------------------
+\DrawArrow[draw=red]{Left 1}{Right 2}{$+$}%
+\DrawArrow[draw=brown]{Left 2}{Right 3}{$-$}%
+\DrawArrow[draw=blue]{Left 3}{Right 3}{$+$}%
+and the formula for the integration by parts then becomes
+\begin{equation}\label{eq:IBP-extended}
+	\int u(x)v'(x)\, dx=u(x) v(x)-u'(x)  \int  v(x)\, dx+ \int \left(u''(x)\, \int  v(x)\, dx\right)\, dx.
+\end{equation}
+This process can be continued further. The entries in the first column are obtained through successive differentiation, while the entries in the second column are obtained by repeatedly computing antiderivatives. For example, we compute $\int x^2 e^{2x}\, dx$ discussed above by using the tabular method as follows:
+
+%\tikzset{Arrow Style/.style={text=black, font=\boldmath}}
+%
+%\newcommand{\tikzmark}[1]{%
+%	\tikz[overlay, remember picture, baseline] \node (#1) {};%
+%}
+%
+%\newcommand*{\XShift}{0.5em}
+%\newcommand*{\YShift}{0.5ex}
+%
+%\NewDocumentCommand{\DrawArrow}{s O{} m m m}{%
+%	\begin{tikzpicture}[overlay,remember picture]
+%		\draw[->, thick, Arrow Style, #2] 
+%		($(#3.west)+(\XShift,\YShift)$) -- 
+%		($(#4.east)+(-\XShift,\YShift)$)
+%		node [midway,above] {#5};
+%	\end{tikzpicture}%
+%}
+
+	\[
+	\renewcommand{\arraystretch}{1.5}
+	\begin{array}{c @{\hspace*{1.0cm}} c}\toprule
+		\text{Derivative} &  \text{Integral} \\\cmidrule{1-2}
+		x^2\tikzmark{Left 1} & \tikzmark{Right 1}e^{2x} \\
+		2x \tikzmark{Left 2} & \tikzmark{Right 2}\frac{1}{2} e^{2x} \\      
+		2  \tikzmark{Left 3} & \tikzmark{Right 3}\frac{1}{4} e^{2x} \\      
+		0  \tikzmark{Left 4} & \tikzmark{Right 4}\frac{1}{8} e^{2x} \\\bottomrule
+	\end{array}
+	\]
+	%-----------------------------------------
+	\DrawArrow[draw=red]{Left 1}{Right 2}{$+$}%
+	\DrawArrow[draw=brown]{Left 2}{Right 3}{$-$}%
+	\DrawArrow[draw=blue]{Left 3}{Right 4}{$+$}%
+	
+\[\int x^2 e^{2x}\, dx = \displaystyle \frac{1}{2} x^2 \, e^{2x} - \frac{1}{2}x\,e^{2x} + \frac{1}{4}\,e^{2x}+C,\]
+where $C$ is an arbitrary constant.
+
+The construction of the table in a tabular form can also be bypassed by applying a suitable version of \eqref{eq:IBP-extended} directly, as illustrated in the following example.
+We compute
+\[
+\begin{array}{ll}
+	\displaystyle\int x^4 e^{2x}\, dx& = \displaystyle x^4 \frac{e^{2x}}{2} - 4x^3\, \frac{e^{2x}}{4} + 12x^2 \, \frac{e^{2x}}{8} - 24x\, \frac{e^{2x}}{16}+24 \frac{e^{2x}}{32} +C\\
+	&=\displaystyle \frac14e^{2x}\left(2 x^4 - 4x^3 +6x^2-6x+ 3\right) +C,
+\end{array}
+\]
+where $C$ is an arbitrary constant.
+%Bibliography
+\medskip
+\medskip
+%\addcontentsline{toc}{section}{Bibliography}
+%List the items cited from the references.bib file
+%\nocite{Royden, Rudin}
+\bibliographystyle{abbrvnat}
+\bibliography{references}
